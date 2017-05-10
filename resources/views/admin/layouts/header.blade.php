@@ -2,9 +2,9 @@
     <!-- Logo -->
     <a href="{{ url('admin/') }}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b></b>权限</span>
+        <span class="logo-mini"><b>RBAC</b></span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>权限</b>管理系统</span>
+        <span class="logo-lg"><b>RBAC</b>权限管理系统</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
