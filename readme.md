@@ -1,6 +1,6 @@
 # RBAC权限管理系统
 
-## 安装
+## 安装步骤
 
 * `git clone` 到本地
 * 执行 `composer install`,创建好数据库
