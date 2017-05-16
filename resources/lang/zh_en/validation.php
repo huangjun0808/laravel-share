@@ -17,7 +17,7 @@ return [
     'active_url'           => ':attribute 不是一个有效的网址。',
     'after'                => ':attribute 必须是一个在 :date 之后的日期。',
     'alpha'                => ':attribute 只能由字母组成。',
-    'alpha_dash'           => ':attribute 只能由字母、数字和斜杠组成。',
+    'alpha_dash'           => ':attribute 只能由中文、数字、字母、破折号和下划线组成。',
     'alpha_num'            => ':attribute 只能由字母和数字组成。',
     'array'                => ':attribute 必须是一个数组。',
     'before'               => ':attribute 必须是一个在 :date 之前的日期。',
@@ -111,7 +111,7 @@ return [
 
     'attributes'           => [
         'name'                  => '名称',
-        'username'              => '用户名',
+        'username'              => '用户',
         'email'                 => '邮箱',
         'first_name'            => '名',
         'last_name'             => '姓',
