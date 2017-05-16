@@ -19,4 +19,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+    public function labels(){
+        return $this->belongsToMany('App\Models\Label','user_label','user_id','label_id');
+    }
+
 }
