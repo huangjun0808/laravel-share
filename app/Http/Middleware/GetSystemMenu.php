@@ -3,7 +3,10 @@
 namespace App\Http\Middleware;
 
 use App\Models\AdminPermission as Permission;
+use App\Models\Label;
+use App\Models\User;
 use Closure;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +26,11 @@ class GetSystemMenu
     {
         //ajax请求不需要获取菜单
         if(!$request->ajax()){
-            $request->attributes->set('leftMenus', $this->getLeftMenu());
+            if($guard == 'home'){
+                $request->attributes->set('labelMenus',$this->getHomeLabelMenu());
+            }else{
+                $request->attributes->set('leftMenus', $this->getLeftMenu());
+            }
         }
         return $next($request);
     }
@@ -76,18 +83,22 @@ class GetSystemMenu
 
     }
 
-    private function compare($routeName, $url){
-        if(is_string($routeName) && is_string($url)){
-            $routeNameSub = implode('.', explode('.', $routeName, -1));
-            $urlArr = explode('/', $url);
-            $urlSub = '';
-            if(isset($urlArr[0]) && isset($urlArr[1])){
-                $urlSub = $urlArr[0] . '.' . $urlArr[1];
+    /**
+     * 获取页面标签
+     * @return mixed
+     */
+    protected function getHomeLabelMenu(){
+        if(Auth::guard('web')->check()){
+            $user_id = Auth::guard('web')->user()->id;
+            $labels = User::find($user_id)->labels()->get();
+            if(!$labels){
+                $labels = Label::where('type',1)->where('enabled',1)
+                    ->orderBy('follower_num','desc')->skip(0)->take(20)->get();
             }
-            if($routeNameSub == $urlSub){
-                return true;
-            }
+        }else{
+            $labels = Label::where('type',1)->where('enabled',1)
+                ->orderBy('follower_num','desc')->skip(0)->take(20)->get();
         }
-        return false;
+        return $labels;
     }
 }

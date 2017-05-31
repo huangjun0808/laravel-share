@@ -30,19 +30,16 @@
         });
     </script>
 </head>
-<body>
-@if(count($errors)>0)
-    {{dump($errors->getMessages())}}
-@endif
+<body class="@yield('body_css')">
     @section('navbar')
         @include('home.layouts.navbar')
     @show
     @section('tabbar')
         @include('home.layouts.tabbar')
     @show
+    @section('wrap')
     <div class="wrap">
         <div class="container">
-            @section('wrap')
             @yield('wrap_header')
             <div class="row">
                 <div class="col-md-9">
@@ -52,13 +49,12 @@
                     @yield('wrap_right')
                 </div>
             </div>
-            @show
         </div>
     </div>
+    @show
     @section('footer')
         @include('home.layouts.footer')
     @show
-    @include('home.layouts.login_modal')
     @yield('script')
 </body>
 </html>

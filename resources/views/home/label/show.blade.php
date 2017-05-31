@@ -3,18 +3,32 @@
 @section('title','首页')
 
 @section('wrap_left')
-    <ul class="nav nav-tabs nav-tabs-spe mb10">
-        <li>
-            <a href="#">最新动态</a>
-        </li>
+    <div class="panel panel-default">
+        <div class="panel-heading label-info">
+            <div class="label-title">
+                @if($label['icon'])
+                <img class="l-img avatar-20" src="{{$label['icon']}}">
+                @endif
+                <span class="l-n">{{$label['name']}}</span>
+                <a class="btn btn-default btn-xs">加关注</a>
+            </div>
+            <p class="label-p">
+                {{$label['content']}}<a class="text-success" href="#">[百科]</a>
+            </p>
+        </div>
+    </div>
+    <ul class="nav nav-tabs nav-tabs-spe nav-tabs-spe-t mb10 ft18">
         <li class="active">
-            <a href="{{url('questions')}}">最新回答</a>
+            <a href="#"><i class="fa fa-question-circle"></i>问答</a>
         </li>
         <li>
-            <a href="{{url('questions/hottest')}}">热门回答</a>
+            <a href="#"><i class="fa fa-file-text"></i>文章</a>
         </li>
         <li>
-            <a href="{{url('questions/unanswered')}}">等待回答</a>
+            <a href="#"><i class="fa fa-black-tie"></i>职位</a>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-wikipedia-w"></i>百科</a>
         </li>
     </ul>
     <div class="list-group list-group-spe">

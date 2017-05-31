@@ -55,6 +55,4 @@ Route::group(['middleware' => ['auth:admin','menu']], function () {
         ]);
     });
 });
-//与微信公众号服务器通信路由
-Route::any('serve/wechat', 'WechatController@serve');
 

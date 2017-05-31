@@ -19,6 +19,7 @@ class CreateLabelsTable extends Migration
             $table->timestamps();
             $table->string('name',100)->default('')->comment('标签名称');
             $table->string('icon',100)->nullable()->comment('标签图标');
+            $table->integer('pid')->index();
             $table->tinyInteger('type')->default(0)->index()->comment('标签类型 0父标签 1子标签');
             $table->text('content')->comment('标签详情');
             $table->integer('follower_num')->default(0)->comment('关注人数');

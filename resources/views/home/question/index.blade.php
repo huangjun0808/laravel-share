@@ -7,13 +7,13 @@
         <li>
             <a href="#">最新动态</a>
         </li>
-        <li class="active">
+        <li class="{{ $active=='index' ? 'active' : '' }}">
             <a href="{{url('questions')}}">最新回答</a>
         </li>
-        <li>
+        <li class="{{ $active=='hottest' ? 'active' : '' }}">
             <a href="{{url('questions/hottest')}}">热门回答</a>
         </li>
-        <li>
+        <li class="{{ $active=='unanswered' ? 'active' : '' }}">
             <a href="{{url('questions/unanswered')}}">等待回答</a>
         </li>
     </ul>

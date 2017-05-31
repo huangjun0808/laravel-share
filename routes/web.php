@@ -11,31 +11,12 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-//Auth::routes();
-//$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-//$this->post('login', 'Auth\LoginController@login');
-//$this->post('logout', 'Auth\LoginController@logout')->name('logout');
-//
-//// Registration Routes...
-//$this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-//$this->post('register', 'Auth\RegisterController@register');
-//
-//// Password Reset Routes...
-//$this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
-//$this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
-//$this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
-//$this->post('password/reset', 'Auth\ResetPasswordController@reset');
-
 Route::get('/home', 'HomeController@index');
 
 /**
  * 命名空间为Home路由组
  */
-Route::group(['namespace'=>'Home'],function(){
+Route::group(['namespace'=>'Home','middleware'=>['menu:home']],function(){
 
     Route::get('/', 'IndexController@index');
 
@@ -47,5 +28,14 @@ Route::group(['namespace'=>'Home'],function(){
     Route::post('register','Auth\RegisterController@register');
     Route::any('register/send','Auth\RegisterController@send');
 
+    //问答路由
+    Route::any('questions','QuestionController@index');
+    Route::any('questions/unanswered','QuestionController@unanswered');
+    Route::any('questions/hottest','QuestionController@hottest');
+
+    Route::any('ask','QuestionController@ask');
+
+    //标签路由
+    Route::any('t/{label}','LabelController@show');
 
 });
