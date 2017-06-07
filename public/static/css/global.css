@@ -23,7 +23,6 @@ a:hover{text-decoration: underline;}
 .spe-ask{background-color: #f3f3f3;}
 .ask-container{width: 100%;max-width: 1600px;margin: 0 auto;}
 .ask{padding-right: 30px;padding-left: 30px;}
-.ask-15{padding-right: 15px;padding-left: 15px;}
 /*顶部导航条*/
 .spe-navbar{margin-bottom: 0;border: none;border-radius:0;background-color: #fff;}
 .spe-navbar .navbar-nav>li>.nav-avatar{width: 28px;height: 28px;margin: 11px;background-size: contain;}

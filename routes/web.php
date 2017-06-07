@@ -29,12 +29,11 @@ Route::group(['namespace'=>'Home','middleware'=>['menu:home']],function(){
     Route::any('register/send','Auth\RegisterController@send');
 
     //问答路由
-    Route::get('questions','QuestionController@index');
-    Route::get('questions/unanswered','QuestionController@unanswered');
-    Route::get('questions/hottest','QuestionController@hottest');
-    Route::resource('question','QuestionController',[
+    Route::any('questions','QuestionController@index');
+    Route::any('questions/unanswered','QuestionController@unanswered');
+    Route::any('questions/hottest','QuestionController@hottest');
 
-    ]);
+    Route::any('ask','QuestionController@ask');
 
     //标签路由
     Route::any('t/{label}','LabelController@show');

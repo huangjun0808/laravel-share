@@ -26,22 +26,9 @@ class QuestionController extends Controller
         return view('home.question.index', $data);
     }
 
-    public function create(){
-        return view('home.question.create');
-    }
-    public function store(){
-        return 'store';
-    }
-    public function edit(){
-        return 'edit';
-    }
-    public function update(){
-        return 'update';
-    }
-    public function destroy(){
-        return 'destroy';
-    }
+    public function ask(){
 
 
-
+        return view('home.question.ask');
+    }
 }
