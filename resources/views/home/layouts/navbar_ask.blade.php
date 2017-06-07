@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default spe-navbar" role="navigation">
-    <div class="container">
+    <div class="ask-container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle spe-toggle" data-toggle="collapse"
                     data-target="#navbar-collapse">
@@ -19,7 +19,7 @@
                 <li class="hidden-xs">
                     <a class="dropdown-toggle ft16" data-toggle="dropdown" aria-expanded="false" style="cursor: pointer;"><i class="fa fa-plus mr5"></i><i class="fa fa-caret-down ft12"></i></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{url('/ask')}}">提问题</a></li>
+                        <li><a href="#">提问题</a></li>
                         <li><a href="#">写文章</a></li>
                         <li class="divider"></li>
                         <li><a href="#">草稿箱</a></li>
@@ -61,4 +61,3 @@
         </div>
     </div>
 </nav>
-@include('home.layouts.login_modal')
