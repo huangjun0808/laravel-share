@@ -81,8 +81,7 @@
             'redo',
             'fullscreen'
         ];
-        //        editor.config.uploadImgUrl = "\s";
+//        editor.config.uploadImgUrl = "\s";
         editor.create();
     </script>
 @stop
-No newline at end of file
