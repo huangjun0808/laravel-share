@@ -32,7 +32,7 @@
 </head>
 <body class="@yield('body_css')">
     @section('navbar')
-        @include('home.layouts.navbar')
+        @include('home.layouts.navbar',['container'=>'container'])
     @show
     @section('tabbar')
         @include('home.layouts.tabbar')
