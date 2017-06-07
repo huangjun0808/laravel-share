@@ -45,6 +45,7 @@
 @section('script')
     <script src="{{asset('static/libs/wangEditor/2.1.23/js/wangEditor.min.js')}}"></script>
     <script>
+//        wangEditor.config.printLog = false;
         var editor = new wangEditor('myEditor');
         editor.config.menus = [
             'source',
@@ -81,7 +82,12 @@
             'redo',
             'fullscreen'
         ];
-//        editor.config.uploadImgUrl = "\s";
+        editor.config.uploadImgFileName = 'image';
+        editor.config.uploadImgUrl = "{{url('upload/image')}}";
+        // 设置 headers（举例）
+        editor.config.uploadHeaders = {
+            'X-CSRF-TOKEN': '{{csrf_token()}}'
+        };
         editor.create();
     </script>
 @stop

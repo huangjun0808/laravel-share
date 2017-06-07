@@ -32,11 +32,12 @@ Route::group(['namespace'=>'Home','middleware'=>['menu:home']],function(){
     Route::get('questions','QuestionController@index');
     Route::get('questions/unanswered','QuestionController@unanswered');
     Route::get('questions/hottest','QuestionController@hottest');
-    Route::resource('question','QuestionController',[
-
-    ]);
+    Route::resource('question','QuestionController');
 
     //标签路由
     Route::any('t/{label}','LabelController@show');
+
+    //上传文件路由
+    Route::any('upload/image','UploadController@image');
 
 });
