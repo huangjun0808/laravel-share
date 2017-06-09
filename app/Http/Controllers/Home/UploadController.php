@@ -11,7 +11,7 @@ class UploadController extends Controller
 
     public function image(Request $request){
         $file = $request->file('image');
-        if($file->isValid()){
+        if($file){
             $originalName = $file->getClientOriginalName();
             $ext = $file->getClientOriginalExtension();
             $type = $file->getClientMimeType();
@@ -24,6 +24,6 @@ class UploadController extends Controller
                 return 'error|上传失败';
             }
         }
-
+        return 'error|上传失败,请重新选择文件';
     }
 }
