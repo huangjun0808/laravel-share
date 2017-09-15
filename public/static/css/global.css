@@ -106,3 +106,12 @@ a:hover{text-decoration: underline;}
 .label-info .l-img{margin: 0 10px 0 0;}
 .label-info .l-n{font-size: 20px;font-weight: 500;vertical-align: middle;margin-right: 15px;}
 .label-info .label-p{margin-top: 15px;}
+
+.form-control-spe{border: none;box-shadow: none;outline: none;background-color: transparent;padding: 0;margin: 0;width: 260px;max-width: 100%;}
+.form-control-label{display: inline-block;color: #017E66;background-color: #e7f2ed;font-size: 13px;text-align: center;line-height: 1;margin-right: .5rem;padding: 5px 8px;margin-bottom: 5px;}
+.form-control-label span{margin-left: 5px;cursor: pointer;}
+
+.tt-menu{background-color: #fff;width: 260px;border: 1px solid #ddd;border-radius: 3px;padding: 10px 0 10px;}
+.tt-menu .tt-dataset .tt-suggestion{padding: 5px 15px;cursor: pointer;}
+.tt-menu .tt-dataset .tt-suggestion p{margin: 0;}
+.tt-menu .tt-dataset .tt-suggestion:hover{background-color: #ddd;}

@@ -11,7 +11,7 @@
  Target Server Version : 50635
  File Encoding         : utf-8
 
- Date: 06/08/2017 11:38:27 AM
+ Date: 09/16/2017 07:55:20 AM
 */
 
 SET NAMES utf8;
@@ -213,6 +213,15 @@ CREATE TABLE `question` (
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `question_user_id_index` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `question_label`
+-- ----------------------------
+DROP TABLE IF EXISTS `question_label`;
+CREATE TABLE `question_label` (
+  `question_id` int(11) DEFAULT NULL,
+  `label_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
